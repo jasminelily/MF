@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MFデモ</string>
+    <string name="header_user_list">ユーザー一覧</string>
+    <string name="header_user_detail">ユーザー詳細</string>
+
+    <string name="ui_dialog_btn_retry">リトライ</string>
+    <string name="ui_dialog_btn_ok">確認</string>
+    <string name="ui_dialog_btn_cancel">キャンセル</string>
+    <string name="ui_dialog_title_open_browser">外部へ遷移</string>
+    <string name="ui_dialog_msg_open_browser">外部ブラウザを開きます。よろしいでしょうか？</string>
+    <string name="ui_dialog_title_retry">データの取得に失敗しました</string>
+
+    <string name="ui_search_bar_hint">ユーザー検索</string>
+
+    <string name="ui_user_detail_lbl_repo">リポジトリ</string>
+    <string name="ui_user_detail_lbl_account">アカウント：%1$s</string>
+    <string name="ui_user_detail_lbl_follower">フォロワー：%1$s</string>
+    <string name="ui_user_detail_lbl_following">フォロイー：%1$s</string>
+
+    <string name="ui_crash_btn_restart">アプリを再起動</string>
+    <string name="ui_crash_title">問題が発生しました。</string>
+    <string name="ui_crash_text">プリを再度起動してください。</string>
+
+    <!-- content description, not for UI-->
+    <string name="desc_btn_back">戻る</string>
+    <string name="desc_btn_setting">設定</string>
+    <string name="desc_btn_search">検索</string>
+    <string name="desc_btn_clear">クリア</string>
+    <string name="desc_avatar">プロファイル画像</string>
+</resources>
