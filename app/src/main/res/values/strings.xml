@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MFDemo</string>
+
+    <string name="header_user_list">User List</string>
+    <string name="header_user_detail">User Detail</string>
+
+    <string name="ui_dialog_btn_retry">Retry</string>
+    <string name="ui_dialog_btn_ok">OK</string>
+    <string name="ui_dialog_btn_cancel">Cancel</string>
+    <string name="ui_dialog_title_open_browser">Leaving App</string>
+    <string name="ui_dialog_msg_open_browser">Will open browser</string>
+    <string name="ui_dialog_title_retry">Failed to get data"</string>
+
+    <string name="ui_search_bar_hint">Search Users</string>
+
+    <string name="ui_user_detail_lbl_repo">Repositories</string>
+    <string name="ui_user_detail_lbl_account">Account：%1$s</string>
+    <string name="ui_user_detail_lbl_follower">Followers：%1$s</string>
+    <string name="ui_user_detail_lbl_following">Following：%1$s</string>
+
+    <string name="ui_crash_btn_restart">Restart App</string>
+    <string name="ui_crash_title">Oops! Something went wrong.</string>
+    <string name="ui_crash_text">The app encountered an unexpected error.</string>
+
+    <!-- content description, not for UI-->
+    <string name="desc_btn_back">Back</string>
+    <string name="desc_btn_setting">Setting</string>
+    <string name="desc_btn_search">Search</string>
+    <string name="desc_btn_clear">Clear</string>
+    <string name="desc_avatar">Avatar</string>
+</resources>
