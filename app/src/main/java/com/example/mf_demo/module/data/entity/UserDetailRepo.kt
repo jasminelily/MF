@@ -1,4 +1,4 @@
-package com.example.mf_demo.module.data
+package com.example.mf_demo.module.data.entity
 
 data class UserDetailRepo(
     val name: String,

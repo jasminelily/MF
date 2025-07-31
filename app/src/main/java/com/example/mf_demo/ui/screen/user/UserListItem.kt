@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.SubcomposeAsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.example.mf_demo.module.data.User
+import com.example.mf_demo.module.data.entity.User
 
 @Composable
 fun UserListItem(

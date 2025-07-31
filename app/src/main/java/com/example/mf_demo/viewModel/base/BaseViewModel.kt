@@ -7,9 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.ViewModel
-import com.example.mf_demo.module.api.base.ApiResult
 import com.example.mf_demo.module.api.base.ApiModule
-import javax.inject.Inject
+import com.example.mf_demo.module.api.base.ApiResult
 import com.example.mf_demo.ui.components.dialog.DialogUI
 import com.example.mf_demo.util.constant.CType
 
@@ -19,12 +18,7 @@ abstract class BaseViewModel : ViewModel() {
     var isRetry by mutableStateOf(false)
     var isRefresh by mutableStateOf(false)
 
-    @Inject
     val api = ApiModule.provideRepository()
-
-    fun getData() {
-        getData(null)
-    }
 
     fun getData(param: BaseRequestData?) {
         startGetData(param)

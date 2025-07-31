@@ -86,8 +86,4 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.coil.network)
 
-    // Hilt
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.navigation)
-
 }

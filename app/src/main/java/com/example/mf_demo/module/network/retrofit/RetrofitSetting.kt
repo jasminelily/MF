@@ -44,5 +44,5 @@ object RetrofitSetting {
     val apiRetrofit: RetrofitApiService by lazy {
         provideRetrofit().create(RetrofitApiService::class.java)
     }
-
-}
+    
+} 
