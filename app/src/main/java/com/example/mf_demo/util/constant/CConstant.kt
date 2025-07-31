@@ -5,6 +5,7 @@ object CConstant {
     const val TIME_CLICK_ENABLE = 500L
 
     const val KEY_ARG_ID = "key_id"
+
     const val PAGING_SIZE = 30
     const val PAGING_DISTANCE = 5
 

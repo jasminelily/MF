@@ -1,6 +1,6 @@
-package com.example.mf_demo.module.api.base
+package com.example.mf_demo.model.api.base
 
-import com.example.mf_demo.module.api.retrofit.RetrofitRepository
+import com.example.mf_demo.model.api.retrofit.RetrofitRepository
 
 object ApiModule {
     fun provideRepository(): IApiRepository {

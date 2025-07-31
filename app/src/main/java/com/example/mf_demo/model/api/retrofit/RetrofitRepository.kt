@@ -1,11 +1,11 @@
-package com.example.mf_demo.module.api.retrofit
+package com.example.mf_demo.model.api.retrofit
 
-import com.example.mf_demo.module.api.base.IApiRepository
-import com.example.mf_demo.module.api.base.ApiResult
-import com.example.mf_demo.module.data.entity.User
-import com.example.mf_demo.module.data.entity.UserDetail
-import com.example.mf_demo.module.data.entity.UserDetailRepo
-import com.example.mf_demo.module.network.retrofit.RetrofitSetting
+import com.example.mf_demo.model.api.base.IApiRepository
+import com.example.mf_demo.model.api.base.ApiResult
+import com.example.mf_demo.model.data.entity.User
+import com.example.mf_demo.model.data.entity.UserDetail
+import com.example.mf_demo.model.data.entity.UserDetailRepo
+import com.example.mf_demo.model.network.retrofit.RetrofitSetting
 
 class RetrofitRepository : IApiRepository {
     private val api = RetrofitSetting.apiRetrofit

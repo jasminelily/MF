@@ -7,8 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.ViewModel
-import com.example.mf_demo.module.api.base.ApiModule
-import com.example.mf_demo.module.api.base.ApiResult
+import com.example.mf_demo.model.api.base.ApiModule
+import com.example.mf_demo.model.api.base.ApiResult
 import com.example.mf_demo.ui.components.dialog.DialogUI
 import com.example.mf_demo.util.constant.CType
 

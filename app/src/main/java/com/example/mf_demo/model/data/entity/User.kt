@@ -1,4 +1,4 @@
-package com.example.mf_demo.module.data.entity
+package com.example.mf_demo.model.data.entity
 
 
 data class User(

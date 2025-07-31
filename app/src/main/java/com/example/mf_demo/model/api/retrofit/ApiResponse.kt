@@ -1,6 +1,6 @@
-package com.example.mf_demo.module.api.retrofit
+package com.example.mf_demo.model.api.retrofit
 
-import com.example.mf_demo.module.api.base.ApiResult
+import com.example.mf_demo.model.api.base.ApiResult
 import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.message
 import com.skydoves.sandwich.retrofit.statusCode
