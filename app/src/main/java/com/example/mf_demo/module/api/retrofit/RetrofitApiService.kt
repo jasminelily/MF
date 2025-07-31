@@ -1,15 +1,18 @@
 package com.example.mf_demo.module.api.retrofit
 
-import com.example.mf_demo.module.data.User
-import com.example.mf_demo.module.data.UserDetail
-import com.example.mf_demo.module.data.UserDetailRepo
+import com.example.mf_demo.module.data.entity.User
+import com.example.mf_demo.module.data.entity.UserDetail
+import com.example.mf_demo.module.data.entity.UserDetailRepo
 import com.skydoves.sandwich.ApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface RetrofitApiService {
     @GET("users")
-    suspend fun getUsers(): ApiResponse<List<User>>
+    suspend fun getUsers(
+        @retrofit2.http.Query("since") since: Int = 0,
+        @retrofit2.http.Query("per_page") perPage: Int = 30
+    ): ApiResponse<List<User>>
 
     @GET("users/{username}")
     suspend fun getUserDetail(@Path("username") username: String): ApiResponse<UserDetail>

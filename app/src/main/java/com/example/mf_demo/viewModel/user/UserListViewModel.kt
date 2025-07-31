@@ -1,43 +1,27 @@
 package com.example.mf_demo.viewModel.user
 
 import androidx.lifecycle.viewModelScope
-import com.example.mf_demo.module.api.base.ApiResult
-import com.example.mf_demo.module.data.User
-import com.example.mf_demo.viewModel.base.BaseRequestData
-import com.example.mf_demo.viewModel.base.BaseViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
 
-class UserListViewModel() : BaseViewModel() {
+import com.example.mf_demo.module.data.entity.User
+import com.example.mf_demo.module.data.source.UserPagingSource
+import com.example.mf_demo.viewModel.base.BasePagingViewModel
+import kotlinx.coroutines.flow.Flow
 
-    private val _users = MutableStateFlow<List<User>>(emptyList())
-    val users: StateFlow<List<User>> = _users
-    var s = true
+class UserListViewModel() : BasePagingViewModel() {
 
-    init {
-        getData()
-    }
-
-    override fun startGetData(param: BaseRequestData?) {
-        viewModelScope.launch {
-
-            isLoading = true
-            isRetry = false
-
-            api.getUsers().let {
-                isLoading = false
-                when (it) {
-                    is ApiResult.Success -> {
-                        _users.value = it.data
-                    }
-
-                    is ApiResult.Error -> {
-                        super.handleError(it)
-                        isRetry = true
-                    }
-                }
-            }
+    val users: Flow<PagingData<User>> = Pager(
+        config = PagingConfig(
+            pageSize = 30,
+            enablePlaceholders = false,
+            prefetchDistance = 5
+        ),
+        pagingSourceFactory = {
+            UserPagingSource(api)
         }
-    }
+    ).flow.cachedIn(viewModelScope)
+
 }
