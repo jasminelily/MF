@@ -1,7 +1,6 @@
 package com.example.mf_demo.ui.screen.user
 
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,6 +27,7 @@ import coil3.compose.SubcomposeAsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.example.mf_demo.module.data.entity.User
+import com.example.mf_demo.util.extension.debouncedClickable
 
 @Composable
 fun UserListItem(
@@ -38,9 +38,8 @@ fun UserListItem(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp)
-            .clickable { onClick() },
+            .debouncedClickable(onClick = onClick),
         elevation = CardDefaults.cardElevation(2.dp)
-
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,

@@ -29,7 +29,8 @@ import com.example.mf_demo.viewModel.user.UserDetailViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.SubcomposeAsyncImage
 import com.example.mf_demo.R
-import com.example.mf_demo.ui.components.NaviBar
+import com.example.mf_demo.ui.components.CenterIndicator
+import com.example.mf_demo.ui.components.bar.NaviBar
 import com.example.mf_demo.util.constant.CType
 import com.example.mf_demo.viewModel.base.BaseRequestData
 
@@ -49,11 +50,7 @@ fun UserDetailScreen(
     val isLoading = viewModel.isLoading
 
     if (isLoading) {
-        CircularProgressIndicator(
-            modifier = Modifier
-                .fillMaxSize()
-                .wrapContentSize(Alignment.Center)
-        )
+        CenterIndicator()
         return
     }
 

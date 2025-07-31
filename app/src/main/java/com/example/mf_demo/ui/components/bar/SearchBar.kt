@@ -1,4 +1,4 @@
-package com.example.mf_demo.ui.components
+package com.example.mf_demo.ui.components.bar
 
 import androidx.compose.material3.*
 import androidx.compose.foundation.shape.RoundedCornerShape

@@ -5,10 +5,13 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -16,16 +19,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.LoadState
-import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.mf_demo.R
-import com.example.mf_demo.ui.components.SearchBar
-import com.example.mf_demo.ui.components.TopBar
+import com.example.mf_demo.ui.components.CenterIndicator
+import com.example.mf_demo.ui.components.RetryLoadDataBox
+import com.example.mf_demo.ui.components.RetryLoadMoreDataBox
+import com.example.mf_demo.ui.components.bar.SearchBar
+import com.example.mf_demo.ui.components.bar.TopBar
+import com.example.mf_demo.util.constant.CConstant
 import com.example.mf_demo.viewModel.user.UserListViewModel
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -46,7 +52,7 @@ fun UserListScreen(
         }
     }
     LaunchedEffect(query) {
-//        delay(CConstant.TIME_USER_SEARCH_DELAY)
+        delay(CConstant.TIME_USER_SEARCH_DELAY)
         debouncedQuery = query
     }
 
@@ -94,27 +100,18 @@ fun UserListScreen(
                 PullToRefreshBox(
                     isRefreshing = users.loadState.refresh is LoadState.Loading,
                     onRefresh = { users.refresh() },
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center
                 ) {
                     when {
                         // Initial loading state
                         users.loadState.refresh is LoadState.Loading -> {
-                            Box(
-                                modifier = Modifier.fillMaxSize(),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                CircularProgressIndicator()
-                            }
+                            //CenterIndicator() //use PullToRefreshBox's indicator
                         }
-
                         // Error state
                         users.loadState.refresh is LoadState.Error -> {
-                            Box(
-                                modifier = Modifier.fillMaxSize(),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                // You can add a retry button here
-                                viewModel.ShowRetry()
-                            }
+                            RetryLoadDataBox({ users.refresh() })
                         }
 
                         // Success state - show the list
@@ -134,29 +131,14 @@ fun UserListScreen(
                                 // Show loading indicator at the bottom when loading more items
                                 if (users.loadState.append is LoadState.Loading) {
                                     item {
-                                        Box(
-                                            modifier = Modifier
-                                                .fillMaxWidth()
-                                                .padding(16.dp),
-                                            contentAlignment = Alignment.Center
-                                        ) {
-                                            CircularProgressIndicator()
-                                        }
+                                        CenterIndicator()
                                     }
                                 }
 
                                 // Show error state for append
                                 if (users.loadState.append is LoadState.Error) {
                                     item {
-                                        Box(
-                                            modifier = Modifier
-                                                .fillMaxWidth()
-                                                .padding(16.dp),
-                                            contentAlignment = Alignment.Center
-                                        ) {
-                                            // You can add a retry button here if needed
-                                            CircularProgressIndicator()
-                                        }
+                                        RetryLoadMoreDataBox { users.retry() }
                                     }
                                 }
                             }
@@ -167,3 +149,4 @@ fun UserListScreen(
         }
     }
 }
+

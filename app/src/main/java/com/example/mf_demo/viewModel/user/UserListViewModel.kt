@@ -8,6 +8,7 @@ import androidx.paging.cachedIn
 
 import com.example.mf_demo.module.data.entity.User
 import com.example.mf_demo.module.data.source.UserPagingSource
+import com.example.mf_demo.util.constant.CConstant
 import com.example.mf_demo.viewModel.base.BasePagingViewModel
 import kotlinx.coroutines.flow.Flow
 
@@ -15,9 +16,9 @@ class UserListViewModel() : BasePagingViewModel() {
 
     val users: Flow<PagingData<User>> = Pager(
         config = PagingConfig(
-            pageSize = 30,
+            pageSize = CConstant.PAGING_SIZE,
             enablePlaceholders = false,
-            prefetchDistance = 5
+            prefetchDistance = CConstant.PAGING_DISTANCE
         ),
         pagingSourceFactory = {
             UserPagingSource(api)

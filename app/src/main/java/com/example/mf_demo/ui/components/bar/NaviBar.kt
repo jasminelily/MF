@@ -1,4 +1,4 @@
-package com.example.mf_demo.ui.components
+package com.example.mf_demo.ui.components.bar
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack

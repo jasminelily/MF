@@ -9,7 +9,7 @@
     <string name="ui_dialog_btn_cancel">Cancel</string>
     <string name="ui_dialog_title_open_browser">Leaving App</string>
     <string name="ui_dialog_msg_open_browser">Will open browser</string>
-    <string name="ui_dialog_title_retry">Failed to get data"</string>
+    <string name="ui_dialog_title_retry">Failed to get data</string>
 
     <string name="ui_search_bar_hint">Search Users</string>
 
@@ -21,6 +21,9 @@
     <string name="ui_crash_btn_restart">Restart App</string>
     <string name="ui_crash_title">Oops! Something went wrong.</string>
     <string name="ui_crash_text">The app encountered an unexpected error.</string>
+
+    <string name="ui_error_get_data">Failed to get data</string>
+    <string name="ui_error_get_data_more">Failed to get more data</string>
 
     <!-- content description, not for UI-->
     <string name="desc_btn_back">Back</string>
