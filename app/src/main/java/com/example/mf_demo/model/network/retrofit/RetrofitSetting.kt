@@ -1,6 +1,6 @@
-package com.example.mf_demo.module.network.retrofit
+package com.example.mf_demo.model.network.retrofit
 
-import com.example.mf_demo.module.api.retrofit.RetrofitApiService
+import com.example.mf_demo.model.api.retrofit.RetrofitApiService
 import com.example.mf_demo.util.constant.CPath
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
@@ -44,5 +44,5 @@ object RetrofitSetting {
     val apiRetrofit: RetrofitApiService by lazy {
         provideRetrofit().create(RetrofitApiService::class.java)
     }
-    
+
 } 

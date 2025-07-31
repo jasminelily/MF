@@ -18,7 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.mf_demo.module.data.entity.UserDetailRepo
+import com.example.mf_demo.model.data.entity.UserDetailRepo
 import com.example.mf_demo.util.extension.debouncedClickable
 
 @Composable

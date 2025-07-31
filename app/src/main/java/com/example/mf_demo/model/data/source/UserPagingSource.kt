@@ -1,10 +1,10 @@
-package com.example.mf_demo.module.data.source
+package com.example.mf_demo.model.data.source
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.mf_demo.module.api.base.ApiResult
-import com.example.mf_demo.module.api.base.IApiRepository
-import com.example.mf_demo.module.data.entity.User
+import com.example.mf_demo.model.api.base.ApiResult
+import com.example.mf_demo.model.api.base.IApiRepository
+import com.example.mf_demo.model.data.entity.User
 
 class UserPagingSource(
     private val apiRepository: IApiRepository

@@ -4,9 +4,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewModelScope
-import com.example.mf_demo.module.api.base.ApiResult
-import com.example.mf_demo.module.data.entity.UserDetail
-import com.example.mf_demo.module.data.entity.UserDetailRepo
+import com.example.mf_demo.model.api.base.ApiResult
+import com.example.mf_demo.model.data.entity.UserDetail
+import com.example.mf_demo.model.data.entity.UserDetailRepo
 import com.example.mf_demo.viewModel.base.BaseRequestData
 import com.example.mf_demo.viewModel.base.BaseViewModel
 import kotlinx.coroutines.async
