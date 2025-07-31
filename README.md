@@ -18,7 +18,7 @@ GitHubユーザー一覧を表示するAndroidアプリケーションです。
 ## API
 * UserList
   GET https://api.github.com/users
-  Pagination
+* UserList Pagination
   GET https://api.github.com/users?since={count}&per_page={pageSize}
 * User Detail
   GET https://api.github.com/users/{username}
@@ -240,6 +240,11 @@ const val TIME_CLICK_ENABLE = 500L       // クリックデバウンス時間
 ```
 
 ## 📱 スクリーンショット
+
+一覧            |  詳細
+:-------------------------:|:-------------------------:
+![image](https://github.com/jasminelily/MF/blob/main/Screenshot_list.png)  |  ![image](https://github.com/jasminelily/MF/blob/main/Screenshot_detail.png)
+
 
 
 
