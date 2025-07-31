@@ -16,7 +16,8 @@ abstract class BaseViewModel : ViewModel() {
     var isLoading by mutableStateOf(true)
     var isShowDialog by mutableStateOf(false)
     var isRetry by mutableStateOf(false)
-    var isRefresh by mutableStateOf(false)
+
+    //var isRefresh by mutableStateOf(false)
 
     val api = ApiModule.provideRepository()
 
