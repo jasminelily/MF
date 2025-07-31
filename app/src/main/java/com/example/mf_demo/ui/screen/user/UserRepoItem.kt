@@ -1,6 +1,5 @@
 package com.example.mf_demo.ui.screen.user
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.mf_demo.module.data.entity.UserDetailRepo
+import com.example.mf_demo.util.extension.debouncedClickable
 
 @Composable
 fun UserDetailItem(
@@ -30,9 +30,7 @@ fun UserDetailItem(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp)
-            .clickable {
-                onClick()
-            },
+            .debouncedClickable(onClick = onClick),
         elevation = CardDefaults.cardElevation(2.dp)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
