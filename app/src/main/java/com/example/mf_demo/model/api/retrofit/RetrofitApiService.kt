@@ -6,12 +6,13 @@ import com.example.mf_demo.model.data.entity.UserDetailRepo
 import com.skydoves.sandwich.ApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface RetrofitApiService {
     @GET("users")
     suspend fun getUsers(
-        @retrofit2.http.Query("since") since: Int = 0,
-        @retrofit2.http.Query("per_page") perPage: Int = 30
+        @Query("since") since: Int,
+        @Query("per_page") perPage: Int
     ): ApiResponse<List<User>>
 
     @GET("users/{username}")

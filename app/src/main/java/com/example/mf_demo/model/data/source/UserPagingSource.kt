@@ -19,14 +19,17 @@ class UserPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, User> {
         return try {
-            val page = params.key ?: 1
+            //since start from 0
+            val page = params.key ?: 0
             val pageSize = params.loadSize
-
-            when (val result = apiRepository.getUsers(page, pageSize)) {
+            val since = page * pageSize
+            
+            val rs = apiRepository.getUsers(since, pageSize)
+            when (rs) {
                 is ApiResult.Success -> {
-                    val users = result.data
-                    val nextKey = if (users.isEmpty()) null else page + 1
-                    val prevKey = if (page == 1) null else page - 1
+                    val users = rs.data
+                    val nextKey = if (users.size < pageSize) null else page + 1
+                    val prevKey = if (page == 0) null else page - 1
 
                     LoadResult.Page(
                         data = users,
@@ -36,7 +39,7 @@ class UserPagingSource(
                 }
 
                 is ApiResult.Error -> {
-                    LoadResult.Error(Exception(result.message))
+                    LoadResult.Error(Exception(rs.message))
                 }
             }
         } catch (e: Exception) {

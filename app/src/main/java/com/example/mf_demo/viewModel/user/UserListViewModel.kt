@@ -18,7 +18,8 @@ class UserListViewModel() : BasePagingViewModel() {
         config = PagingConfig(
             pageSize = CConstant.PAGING_SIZE,
             enablePlaceholders = false,
-            prefetchDistance = CConstant.PAGING_DISTANCE
+            prefetchDistance = CConstant.PAGING_DISTANCE,
+            initialLoadSize = CConstant.PAGING_SIZE
         ),
         pagingSourceFactory = {
             UserPagingSource(api)
