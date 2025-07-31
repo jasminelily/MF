@@ -240,8 +240,11 @@ const val TIME_CLICK_ENABLE = 500L       // クリックデバウンス時間
 ```
 
 ## 📱 スクリーンショット
+
 一覧            |  詳細
 :-------------------------:|:-------------------------:
 ![image](https://github.com/jasminelily/MF/blob/main/Screenshot_list.png)  |  ![image](https://github.com/jasminelily/MF/blob/main/Screenshot_detail.png)
+
+
 
 
