@@ -12,6 +12,7 @@ GitHubユーザー一覧を表示するAndroidアプリケーションです。
 * ６、テスト：テストケース、テストCode
 * 7、プロジェクト開発、new branch -> push -> merge, mainには直接pushしない
 * 8、minSdk, targetSdk アプリ対応OSバージョンの確認
+* 9、一覧画面のページネーション最適化（Cache with okHttp etc...）
 
 ## APP
 [app] moduleだけ、MVVM, Jatpack Compose +  Paging 3+ Retrofit + okHttpを使用して構築されています。
